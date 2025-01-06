@@ -1,21 +1,15 @@
-#include <string>
-#include <vector>
-
+#include <algorithm> // min, max 함수 사용
 using namespace std;
 
 long long solution(int a, int b) 
 {
-    long long answer = 0; 
-    
-    // a와 b 비교
-    int minValue = min(a, b); // 더 작은 값
-    int maxValue = max(a, b); // 더 큰 값
-    
-    // 작은 값부터 큰 값까지 반복하며 합산
-    for (int i = minValue; i <= maxValue; i++)
+    long long answer = 0;
+
+    // 반복문에서 min과 max를 직접 사용
+    for (int i = min(a, b); i <= max(a, b); i++) 
     {
-        answer += i; // 현재 숫자를 결과에 더함
+        answer += i; // i를 계속 더함
     }
-    
+
     return answer;
 }
