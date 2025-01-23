@@ -9,16 +9,9 @@ vector<int> solution(vector<int> arr)
         return {-1};
     }
 
-    int minValue = *min_element(arr.begin(), arr.end());
+    auto minIt = min_element(arr.begin(), arr.end());
 
-    vector<int> result;
-    for (int num : arr)
-    {
-        if (num != minValue)
-        {
-            result.push_back(num);
-        }
-    }
+    arr.erase(minIt);
 
-    return result.empty() ? vector<int>{-1} : result;
+    return arr.empty() ? vector<int>{-1} : arr;
 }
